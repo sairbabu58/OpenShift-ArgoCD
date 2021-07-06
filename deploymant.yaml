@@ -21,6 +21,13 @@ spec:
       containers:
       - image: quay.io/redhatworkshops/bgd:latest
         name: bgd
+        volumeMounts:
+        - mountPath: /data
+          name: v1
+        volumes:
+        - name: v1
+          persistentVolumeClaim:
+            claimName: demo
         env:
         - name: COLOR
           value: "green"
