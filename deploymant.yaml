@@ -25,4 +25,11 @@ spec:
         - name: COLOR
           value: "green"
         resources: {}
+        volumeMounts:
+        - mountPath: /data
+          name: v1
+      volumes:
+      - name: v1
+        persistentVolumeClaim:
+         claimName: demo
 ---
