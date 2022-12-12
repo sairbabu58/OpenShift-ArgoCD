@@ -4,23 +4,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: bgd
-  name: bgd
+    app: test-app
+  name: test-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: bgd
+      app: test-app
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: bgd
+        app: test-app
     spec:
       containers:
       - image: quay.io/redhatworkshops/bgd:latest
-        name: bgd
+        name: test-app
         env:
         - name: COLOR
           value: "blue"
