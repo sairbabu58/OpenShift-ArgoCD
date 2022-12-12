@@ -3,16 +3,16 @@ kind: Route
 metadata:
   creationTimestamp: null
   labels:
-    app: bgd
-  name: bgd
-  namespace: bgd
+    app: test-app
+  name: test-app
+  namespace: test-argocd
 spec:
-  host: "bgd.apps.ocp4.beonlab.net"
+  host: "test-app.oscp.intern.beon.net"
   port:
     targetPort: 8080
   to:
     kind: Service
-    name: bgd
+    name: test-app
     weight: 100
 status:
   ingress:
