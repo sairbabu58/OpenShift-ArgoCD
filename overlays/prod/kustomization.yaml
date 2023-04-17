@@ -11,3 +11,8 @@ resources:
 #- networkpolicy.yaml	# Create networkpolicy.yaml file on this path: overlays/dev/
 
 #namePrefix: prod- 	# RHACM Managed cluster label should be match with this value. so that it will work on 'prod' managed cluster
+
+#images:
+#  - name: mysql
+#    newName: registry.redhat.io/rhel/mysql-80
+#    newTag: 1-152
