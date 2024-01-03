@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+  - ../../base
+
+patches:
+- path: patch-replicas.yaml
+  target:
+    kind: Deployment
+    name: test-app
+
+resources:
+#- pvc.yaml 		# Create pvc.yaml file on this path: overlays/prod/
+#- route.yaml		# Create route.yaml file on this path: overlays/prod/
+#- quota.yaml		# Create quota.yaml file on this path: overlays/prod/
+#- networkpolicy.yaml	# Create networkpolicy.yaml file on this path: overlays/prod/
+
+#namePrefix: prod- 	# RHACM Managed cluster label should be match with this value. so that it will work on 'prod' managed cluster
+
+#images:
+#  - name: mysql
+#    newName: registry.redhat.io/rhel/mysql-80
+#    newTag: 1-152
