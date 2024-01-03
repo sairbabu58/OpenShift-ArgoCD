@@ -1,0 +1,5 @@
+
+# Core validation
+$ oc kustomize base/.
+$ oc kustomize overlays/prod/
+
