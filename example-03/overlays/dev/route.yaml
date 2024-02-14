@@ -6,12 +6,12 @@ metadata:
     app: test-app
   name: test-app
 spec:
-  host: "test.ocp-dev.j2ctechnologies.com"
+  host: "dev.apps.ocp4.example.com"
   port:
     targetPort: 8080
   to:
     kind: Service
-    name: test-app
+    name: dev-test-app
     weight: 100
 status:
   ingress:
