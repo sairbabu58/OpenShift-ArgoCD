@@ -3,3 +3,8 @@
 $ oc kustomize base/.
 $ oc kustomize overlays/prod/
 
+
+#Apply command
+$ oc apply -k /path-to-path
+$oc apply -k overlays/prod/
+
