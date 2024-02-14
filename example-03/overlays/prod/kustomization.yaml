@@ -10,7 +10,7 @@ resources:
 #- quota.yaml		# Create quota.yaml file on this path: overlays/prod/
 #- networkpolicy.yaml	# Create networkpolicy.yaml file on this path: overlays/prod/
 
-namePrefix: prod- 	# Application will get create prod-<your-app-name>, example $oc get po -> prod-test-app or dev-test-app
+namePrefix: prod- 	# Application will get create prod-<your-app-name>, example $oc get po -> prod-test-app or dev-test-app // or -prod, -dev
 
 #images:
 #  - name: mysql
