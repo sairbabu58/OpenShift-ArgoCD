@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+  - ../../base
+
+resources:
+- pvc.yaml 		# Create pvc.yaml file on this path: overlays/dev/
+- route.yaml		# Create route.yaml file on this path: overlays/dev/
+#- quota.yaml		# Create quota.yaml file on this path: overlays/dev/
+#- networkpolicy.yaml	# Create networkpolicy.yaml file on this path: overlays/dev/
+
+namePrefix: dev- 	# RHACM Managed cluster label should be match with this value. so that it will work on 'dev' managed cluster
