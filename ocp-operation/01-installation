@@ -2,7 +2,7 @@
 2) Once installation is done, login to ocp web-UI > right side top > click the 9 dots (...) > Cluster ArgoCD.
 ....
 
-Login to ArgoCD webUI:
+## Login to ArgoCD webUI:
 
 1) Login to ArgoCD webUI using openshift credentials 
   $ oc get route -n openshift-gitops (or) 
@@ -10,7 +10,7 @@ Login to ArgoCD webUI:
 
 ...
 
-Configure the secure access WebUI
+## Configure the secure access WebUI
 
 $ oc project openshift-gitops
 $ oc get argocd
@@ -28,6 +28,19 @@ line 118. add/update the new line
 $ again login to argocd webui and check whether login is secure.
 
 ...
+
+## ArgoCD permission:
+
+$ oc edit argocd/openshift-argocd
+ '''
+  rbac:
+    policy: |
+      g, ocpadmins, role:admin
+    scopes: '[groups]'
+'''
+...
+
+
 
 
 
