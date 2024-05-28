@@ -17,7 +17,7 @@ $ oc get argocd
 $ oc edit argocd/openshift-gitops
 
 '''
-remove the ownerRef..
+remove the ownerRef (dont remove uid and resourcesversion)
 
 line 118. add/update the new line
  route:
