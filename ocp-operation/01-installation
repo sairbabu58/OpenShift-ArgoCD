@@ -1,6 +1,35 @@
-$ Go to the operator hub and install the gitops operator 
-$ Once installation is done, login to ocp web-UI > right side top > click the 9 dots (...) > Cluster ArgoCD.
+1) Go to the operator hub and install the gitops operator 
+2) Once installation is done, login to ocp web-UI > right side top > click the 9 dots (...) > Cluster ArgoCD.
 ....
+
+Login to ArgoCD webUI:
+
+1) Login to ArgoCD webUI using openshift credentials 
+  $ oc get route -n openshift-gitops (or) 
+  $ login to ocp web-UI > right side top > click the 9 dots (...) > Cluster ArgoCD
+
+...
+
+Configure the secure access WebUI
+
+$ oc project openshift-gitops
+$ oc get argocd
+$ oc edit argocd/openshift-gitops
+
+'''
+remove the ownerRef..
+
+line 118. add/update the new line
+ route:
+      enabled: true
+      tls:
+        termination: reencrypt
+'''
+$ again login to argocd webui and check whether login is secure.
+
+...
+
+
 
 
 
