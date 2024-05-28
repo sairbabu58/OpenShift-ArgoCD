@@ -10,14 +10,15 @@
 
 ...
 
-## Configure the secure access WebUI
+## Configure the secure access ArgoVD WebUI
 
 $ oc project openshift-gitops
 $ oc get argocd
 $ oc edit argocd/openshift-gitops
 
 '''
-remove the ownerRef (dont remove uid and resourcesversion)
+remove the ownerRef 
+  
 
 line 118. add/update the new line
  route:
@@ -29,7 +30,7 @@ $ again login to argocd webui and check whether login is secure.
 
 ...
 
-## ArgoCD permission:
+## Grant administrator rights to the ocpadmins group.
 
 $ oc edit argocd/openshift-argocd
  '''
@@ -41,7 +42,24 @@ $ oc edit argocd/openshift-argocd
 ...
 
 
+## Configure the default instance to trust the cluster certificate authority. Argo CD accesses only trusted repositories.
 
+$ oc create configmap -n openshift-gitops cluster-root-ca-bundle
+$ oc label configmap -n openshift-gitops cluster-root-ca-bundle config.openshift.io/inject-trusted-cabundle=true
+$ oc edit argocd -n openshift-gitops openshift-gitops
+'''
+repo: 
+   resources:
+     ''''
+   volumeMounts:
+    - mountPath: /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+      name: cluster-root-ca-bundle
+      subPath: ca-bundle.crt
+    volumes:
+    - configMap:
+        name: cluster-root-ca-bundle
+      name: cluster-root-ca-bundle
+'''
 
 
 
