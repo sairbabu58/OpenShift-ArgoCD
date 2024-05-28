@@ -1,1 +1,10 @@
+$ Go to the operator hub and install the gitops operator 
+$ Once installation is done, login to ocp web-UI > right side top > click the 9 dots (...) > Cluster ArgoCD.
+....
+
+
+
+
+
+
 
