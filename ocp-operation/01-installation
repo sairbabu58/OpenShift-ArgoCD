@@ -21,7 +21,8 @@ remove the ownerRef
   
 
 line 118. add/update the new line
- route:
+server:
+   route:
       enabled: true
       tls:
         termination: reencrypt
