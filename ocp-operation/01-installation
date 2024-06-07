@@ -1,5 +1,9 @@
 1) Go to the operator hub and install the gitops operator 
 2) Once installation is done, login to ocp web-UI > right side top > click the 9 dots (...) > Cluster ArgoCD.
+
+NS: 
+ - openshift-gitops-operator
+ - openshift-gitops
 ....
 
 ## Login to ArgoCD webUI:
@@ -7,6 +11,11 @@
 1) Login to ArgoCD webUI using openshift credentials 
   $ oc get route -n openshift-gitops (or) 
   $ login to ocp web-UI > right side top > click the 9 dots (...) > Cluster ArgoCD
+
+2) Authentication:
+  - Use openshift integrated identity 
+  - Or use ArgoCD default username and password:
+$ oc -n openshift-gitops extract secret/openshift-gitops-cluster --to=-
 
 ...
 
