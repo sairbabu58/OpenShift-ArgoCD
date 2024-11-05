@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/sairbabu58/OpenShift-ArgoCD.git
     targetRevision: HEAD
-    path: 
+    path: ocp-infra-code
   destination:
     server: https://kubernetes.default.svc
-    namespace: guestbook
+    namespace: test-gitops
