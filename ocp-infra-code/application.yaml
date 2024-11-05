@@ -11,4 +11,4 @@ spec:
     path: ocp-infra-code
   destination:
     server: https://kubernetes.default.svc
-    namespace: test-gitops
+    namespace: argocd-demo
