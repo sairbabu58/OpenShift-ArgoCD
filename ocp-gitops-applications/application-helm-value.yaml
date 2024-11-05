@@ -1,18 +1,25 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx
+  name: nginx-01
   namespace: openshift-gitops
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd-test-01
+    namespace: argocd-test-03
   project: default
   sources:
     # Chart from Helm Repo
     - chart: nginx
       repoURL: https://charts.bitnami.com/bitnami  
       targetRevision: 18.2.0 
+      helm:
+        valueFiles: 
+        - $values/ocp-gitops-applications/values/prod-nginx-values.yaml
+    - repoURL: https://github.com/sairbabu58/OpenShift-ArgoCD.git
+      targetRevision: HEAD
+      ref: values
+
   syncPolicy:
     automated:
       prune: true
