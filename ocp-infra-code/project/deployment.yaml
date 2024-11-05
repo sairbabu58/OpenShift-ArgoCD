@@ -1,1 +1,35 @@
-
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: test-app
+  name: test-app
+  namespace: argocd-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: test-app
+    spec:
+      containers:
+      - image: quay.io/redhatworkshops/bgd:latest
+        name: test-app
+        env:
+        - name: COLOR
+          value: "blue"
+        resources: {}
+        volumeMounts:
+        - mountPath: /data
+          name: v1
+      volumes:
+      - name: v1
+        emptyDir: {}
+---
