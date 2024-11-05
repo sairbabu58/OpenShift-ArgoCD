@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: test-01
-  namespace: argocd
+  namespace: openshift-gitops
 spec:
   project: default
   
