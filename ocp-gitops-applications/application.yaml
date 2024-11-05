@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-01
+  namespace: openshift-gitops
+spec:
+  project: default
+  
+  source:
+    repoURL: https://github.com/sairbabu58/OpenShift-ArgoCD.git
+    targetRevision: HEAD
+    path: ocp-infra-code
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd-demo
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    
+    syncOptions:
+      - CreateNamespace=true

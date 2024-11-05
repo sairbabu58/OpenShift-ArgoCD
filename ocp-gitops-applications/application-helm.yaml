@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx
+  namespace: openshift-gitops
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd-test-01
+  project: default
+  sources:
+    # Chart from Helm Repo
+    - chart: nginx
+      repoURL: https://charts.bitnami.com/bitnami  
+      targetRevision: 18.2.0 
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
