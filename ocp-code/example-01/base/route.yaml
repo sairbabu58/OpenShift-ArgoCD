@@ -5,8 +5,9 @@ metadata:
   labels:
     app: test-app
   name: test-app
+  namespace: test-argocd
 spec:
-  host: "test.oscp.intern.beon.net"
+  host: "test.apps.hub.cancom.intern.local"
   port:
     targetPort: 8080
   to:
