@@ -1,1 +1,14 @@
+Deploying resources to a different namespace
+$  oc label namespace <target_namespace> argocd.argoproj.io/managed-by=<argocd_namespace>
+
+<target_namespace>
+Specifies the name of the namespace you want Argo CD to manage.
+
+<argocd_namespace>
+Specifies the name of the namespace where Argo CD is installed.
+
+
+......
+
+
 
