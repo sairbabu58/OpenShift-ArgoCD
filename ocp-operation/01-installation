@@ -49,7 +49,7 @@ $ oc edit argocd/openshift-argocd
       g, ocpadmins, role:admin
     scopes: '[groups]'
 '''
-...
+...........................................................
 
 
 ## Configure the default instance to trust the cluster certificate authority. Argo CD accesses only trusted repositories.
@@ -70,6 +70,7 @@ repo:
         name: cluster-root-ca-bundle
       name: cluster-root-ca-bundle
 '''
+.....................................................
 
 
 
