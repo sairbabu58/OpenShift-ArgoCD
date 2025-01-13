@@ -1,0 +1,2 @@
+$ oc create cm cluster-root-ca-bundle -n openshift-gitops
+$ oc label cm/cluster-root-ca-bundle -n openshift-gitops config.openshift.io/inject-trustd-cabundle=true
