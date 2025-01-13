@@ -1,2 +1,15 @@
+.........
+- If Argocd webconsole secure/insecure issues:
+
 $ oc create cm cluster-root-ca-bundle -n openshift-gitops
 $ oc label cm/cluster-root-ca-bundle -n openshift-gitops config.openshift.io/inject-trustd-cabundle=true
+
+........................
+
+.......................
+- Adding this annotations, It will wait for above resources(NS, Opperator, App) nee to be create before apply this activity.
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "1"
+...................................
+
