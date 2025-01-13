@@ -13,3 +13,21 @@ $ oc label cm/cluster-root-ca-bundle -n openshift-gitops config.openshift.io/inj
     argocd.argoproj.io/sync-wave: "1"
 ...................................
 
+....................................
+- Note: Dont apply the hole changes and dont over write the hole configuration file. Just apply the additional changes
+"
+annotations:
+    argocd.argoproj.io/sync-options: ServerSideApply=true,Validate=false
+"
+
+apiVersion: operator.openshift.io/v1
+kind: Console
+metadata:
+  name: cluster
+  annotations:
+    argocd.argoproj.io/sync-options: ServerSideApply=true,Validate=false
+spec:
+  customization:
+    customProductName: Production
+...............................................
+
