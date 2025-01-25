@@ -1,5 +1,13 @@
+# ArgoCD Admin operation Instance
+# ArgoCD Application operation Instance
+
+
+
+
+
 1) Go to the operator hub and install the gitops operator 
-2) Once installation is done, login to ocp web-UI > right side top > click the 9 dots (...) > Cluster ArgoCD.
+2) Default ArgoCD instance will get create on openshift-gitops NS
+3) Once installation is done, login to ocp web-UI > right side top > click the 9 dots (...) > Cluster ArgoCD.
 
 NS: 
  - openshift-gitops-operator
