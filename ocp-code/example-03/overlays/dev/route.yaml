@@ -5,6 +5,7 @@ metadata:
   labels:
     app: test-app
   name: test-app
+  namespace: test-argocd-03
 spec:
   host: "dev.apps.ocp4.example.com"
   port:
