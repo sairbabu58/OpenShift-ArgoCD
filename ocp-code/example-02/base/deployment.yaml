@@ -6,6 +6,7 @@ metadata:
   labels:
     app: test-app
   name: test-app
+  namespace: test-argocd-02
 spec:
   replicas: 2
   selector:
