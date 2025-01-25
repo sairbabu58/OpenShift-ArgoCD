@@ -3,7 +3,7 @@
 
 
 
-
+....... Start ArgoCD Admin operation Instance  .....................
 
 1) Go to the operator hub and install the gitops operator 
 2) Default ArgoCD instance will get create on openshift-gitops NS
@@ -78,7 +78,9 @@ repo:
         name: cluster-root-ca-bundle
       name: cluster-root-ca-bundle
 '''
-.....................................................
+................. Start ArgoCD Admin operation Instance .......................
+
+
 
 
 
