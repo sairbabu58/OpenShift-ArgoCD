@@ -2,5 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: test-app 
+  namespace: test-argocd-03
 spec:
   replicas: 5
