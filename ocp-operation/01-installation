@@ -78,14 +78,30 @@ repo:
         name: cluster-root-ca-bundle
       name: cluster-root-ca-bundle
 '''
-................. Start ArgoCD Admin operation Instance .......................
+................. End ArgoCD Admin operation Instance .......................
 
 
 
 
 
+............... Start ArgoCD Application operation Instance .....................
 
 
+By default, the Red Hat OpenShift GitOps operator creates an Argo CD instance in the openshift-gitops namespace. 
+This Argo CD instance has permissions to manage cluster-wide resources. Thus, Red Hat recommends using this instance only for 
+administration purposes, and to create other, less privileged instances for regular application deployment.
 
+To deploy regular applications, you can deploy new Argo CD instances. By default, the new Argo CD instances have permissions to manage 
+resources only in the namespace where they are deployed.
+
+You can allow an Argo CD instance to manage resources in other namespaces than where it is deployed by adding the 
+"argocd.argoproj.io/managed-by" label to the namespace. The following example allows the Argo CD instance in the argocd-ns namespace to 
+manage the resources in the managed-ns namespace.
+
+Example: 
+-> argocd-ns (ArgoCD instance is running)
+-> managed-ns-01 , managed-ns-02 (Application NS, which will be manage by argocd-ns)
+
+$ oc label namespace managed-ns argocd.argoproj.io/managed-by=argocd-ns
 
 
