@@ -6,7 +6,7 @@ metadata:
   labels:
     app: test-app
   name: test-app
-  namespace: test-argocd-03
+  namespace: test-argocd-02
 spec:
   ports:
   - port: 8080
