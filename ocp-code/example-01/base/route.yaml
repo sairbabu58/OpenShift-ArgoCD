@@ -5,7 +5,7 @@ metadata:
   labels:
     app: test-app
   name: test-app
-  namespace: test-argocd
+  namespace: test-argocd-01
 spec:
   host: "test.apps.hub.cancom.intern.local"
   port:
