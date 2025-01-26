@@ -9,4 +9,4 @@ spec:
   resources:
     requests:
       storage: 100Mi
-  storageClassName: nfs-storage
+  storageClassName: gp3-csi
