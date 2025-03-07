@@ -69,7 +69,7 @@ $ oc edit argocd -n openshift-gitops openshift-gitops
 repo: 
    resources:
      ''''
-   volumeMounts:
+    volumeMounts:
     - mountPath: /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
       name: cluster-root-ca-bundle
       subPath: ca-bundle.crt
