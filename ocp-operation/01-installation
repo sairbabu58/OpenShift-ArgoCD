@@ -109,6 +109,11 @@ $ oc label namespace managed-ns argocd.argoproj.io/managed-by=argocd-ns
 
 ........................... Start Common Issues Service account permission Deny ....................................
 
+
+
+
+
+
 https://access.redhat.com/solutions/7007638
 
 $ oc adm policy add-role-to-user admin system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller -n <namespace> #where you going to deploy your application.
