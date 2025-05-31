@@ -7,7 +7,7 @@ metadata:
   name: test-app
   namespace: test-argocd-01
 spec:
-  host: "test-app-01.apps.cluster-bl9xb.sandbox1936.opentlc.com"
+  host: "test-app-01.apps.cluster-sd92l.sandbox259.opentlc.com"
   port:
     targetPort: 8080
   to:
