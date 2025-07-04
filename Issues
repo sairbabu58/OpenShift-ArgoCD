@@ -31,7 +31,3 @@ spec:
     customProductName: Production
 ...............................................
 
-'''console
-$ podman volume create -o device=podman/httpd -o=o=bind  podma-httpd
-$ podman volume create -o device=podman/haproxy -o=o=bind  podma-haproxy
-'''
