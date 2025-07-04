@@ -20,7 +20,7 @@ annotations:
     argocd.argoproj.io/sync-options: ServerSideApply=true,Validate=false
 "
 
-'''apiVersion: operator.openshift.io/v1
+apiVersion: operator.openshift.io/v1
 kind: Console
 metadata:
   name: cluster
@@ -28,6 +28,6 @@ metadata:
     argocd.argoproj.io/sync-options: ServerSideApply=true,Validate=false
 spec:
   customization:
-    customProductName: Production'''
+    customProductName: Production
 ...............................................
 
