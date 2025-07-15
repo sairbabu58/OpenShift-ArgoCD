@@ -30,3 +30,9 @@ spec:
   customization:
     customProductName: Production
 ...............................................
+
+
+
+```
+oc get no 
+```
