@@ -33,6 +33,6 @@ spec:
 
 
 
-```
-oc get no 
-```
+
+ get po lsit `oc get no` 
+
