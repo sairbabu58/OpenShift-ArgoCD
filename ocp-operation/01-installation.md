@@ -3,7 +3,7 @@
 
 
 
-# ....... Start ArgoCD Admin operation Instance  .....................
+#  Start ArgoCD Admin operation Instance
 
 1) Go to the operator hub and install the gitops operator 
 2) Default ArgoCD instance will get create on openshift-gitops NS
@@ -60,7 +60,7 @@ $ oc edit argocd/openshift-argocd
 ```
 
 
-## Configure the default instance to trust the cluster certificate authority. Argo CD accesses only trusted repositories.
+# Configure the default instance to trust the cluster certificate authority. Argo CD accesses only trusted repositories.
 ```
 $ oc create configmap -n openshift-gitops cluster-root-ca-bundle
 $ oc label configmap -n openshift-gitops cluster-root-ca-bundle config.openshift.io/inject-trusted-cabundle=true
@@ -84,8 +84,7 @@ repo:
 
 
 
-# ............... Start ArgoCD Application operation Instance .....................
-
+# Start ArgoCD Application operation Instance
 
 By default, the Red Hat OpenShift GitOps operator creates an Argo CD instance in the openshift-gitops namespace. 
 This Argo CD instance has permissions to manage cluster-wide resources. Thus, Red Hat recommends using this instance only for 
@@ -106,8 +105,7 @@ $ oc label namespace managed-ns argocd.argoproj.io/managed-by=argocd-ns
 ```
 
 
-
-# ........................... Start Common Issues Service account permission Deny ....................................
+# Common Issues Service account permission Deny
 
 
 
