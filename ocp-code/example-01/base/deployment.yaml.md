@@ -1,4 +1,4 @@
----
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -32,4 +32,4 @@ spec:
       volumes:
       - name: v1
         emptyDir: {}
----
+```
