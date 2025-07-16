@@ -12,7 +12,7 @@ Browser-> localhost:8000
      User: root
      Password: docker exec -it git-lab cat /etc/gitlab/initial_root_password
 ```
-** After login, please reset the default password**
+**After login, please reset the default password**
 ```
      -> User -> Profile -> Password
 ```
