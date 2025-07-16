@@ -1,25 +1,25 @@
-.........
-- If Argocd webconsole secure/insecure issues:
 
+# If Argocd webconsole secure/insecure issues:
+```
 $ oc create cm cluster-root-ca-bundle -n openshift-gitops
 $ oc label cm/cluster-root-ca-bundle -n openshift-gitops config.openshift.io/inject-trustd-cabundle=true
+```
 
-........................
 
-.......................
+```
 - Adding this annotations, It will wait for above resources(NS, Opperator, App) nee to be create before apply this activity.
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
     argocd.argoproj.io/sync-wave: "1"
-...................................
+```
 
-....................................
-- Note: Dont apply the hole changes and dont over write the hole configuration file. Just apply the additional changes
-"
+
+**- Note: Dont apply the whole changes and dont over write the whole configuration file. Just apply the additional changes**
+```
 annotations:
     argocd.argoproj.io/sync-options: ServerSideApply=true,Validate=false
-"
-
+```
+```
 apiVersion: operator.openshift.io/v1
 kind: Console
 metadata:
@@ -29,10 +29,4 @@ metadata:
 spec:
   customization:
     customProductName: Production
-...............................................
-
-
-
-
- get po lsit `oc get no` 
-
+```
