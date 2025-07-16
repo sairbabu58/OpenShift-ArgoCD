@@ -1,9 +1,9 @@
--> How to access Openshift ArgoCD from Externally
+# How to access Openshift ArgoCD from Externally
 
 -> ArgoCD is installed on OCP Cluster and operator based 
 -> This argoCD will act as a centerlized ArgoCD Instance for the application or Infra operation
 
-Process to Do it.
+# Process to Do it.
 -> prerequisite
 -> One external IP
 -> DNS name for that external IP
@@ -16,20 +16,20 @@ Process to Do it.
 
 -> Create ArgoCD instance on app-x-argocd-project
 
-IMP: modify the existing configuration.
+**IMP: modify the existing configuration.**
 
-...
+```
 route:
  enabled: false   
 service:
   type: LoadBalancer
 host: argocd-rs-dev.ocp.example.com
-...
-
+```
+```
 -> Create a new SVC as a LoadBalancer
 -> oc get svc/argocd-server -oyaml > external-svc.yaml
-
-...
+```
+```
  kind: Service
  metadata:
 annotations:
@@ -63,11 +63,11 @@ selector:
 sessionAffinity: None
 type: LoadBalancer
 loadBalancerIP: 10.0.0.100  ## optional
-...
+```
 
--> Configure IPaddresspool and L2Adv
+# Configure IPaddresspool and L2Adv
 
-...
+```
 
             - complianceType: musthave
               objectDefinition:
@@ -101,6 +101,6 @@ loadBalancerIP: 10.0.0.100  ## optional
                 spec:
                   ipAddressPools:
                     - argocd-ipaddresspool
-...
+```
 
--> Access argocd using external DNS-name
+ **Access argocd using external DNS-name**
