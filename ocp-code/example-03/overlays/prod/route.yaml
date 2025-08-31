@@ -7,6 +7,9 @@ metadata:
   name: test-app
   namespace: test-argocd-03
 spec:
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
   host: "satish.apps.cluster-spvqt.dynamic.redhatworkshops.io"
   port:
     targetPort: 8080
