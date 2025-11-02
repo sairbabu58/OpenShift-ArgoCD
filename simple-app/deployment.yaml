@@ -6,7 +6,7 @@ metadata:
     app: pradeep
   name: pradeep
 spec:
-  replicas: 10
+  replicas: 6
   selector:
     matchLabels:
       app: pradeep
@@ -22,6 +22,6 @@ spec:
         name: httpd
         resources: 
           limits:
-            cpu: 400m
+            cpu: 500m
             memory: 500Mi
 status: {}
