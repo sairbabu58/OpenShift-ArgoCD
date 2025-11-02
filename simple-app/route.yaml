@@ -6,7 +6,7 @@ metadata:
     app: demo-app
   name: demo-app
 spec:
-  host: prod.apps.cluster-x5vdx.sandbox1285.opentlc.com
+  host: demo-app.apps.cluster-x5vdx.sandbox1285.opentlc.com
   port:
     targetPort: 80-80
   to:
