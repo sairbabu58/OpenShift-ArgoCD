@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: pradeep
+  name: pradeep
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: pradeep
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: pradeep
+    spec:
+      containers:
+      - image: httpd
+        name: httpd
+        resources: 
+          limits:
+            cpu: 400m
+            memory: 500Mi
+status: {}
