@@ -30,3 +30,10 @@ spec:
   customization:
     customProductName: Production
 ```
+# How to validate ArgoCD and Git-repo connection with secure 
+
+```
+$ oc project argocd-ns
+$ oc rsh po/argocd-repo-pod curl https://git.example.com:443
+- > It should print the output without SSL centificate error 
+```
