@@ -66,17 +66,16 @@ $ oc create configmap -n openshift-gitops cluster-root-ca-bundle
 $ oc label configmap -n openshift-gitops cluster-root-ca-bundle config.openshift.io/inject-trusted-cabundle=true
 $ oc edit argocd -n openshift-gitops openshift-gitops
 
-repo: 
-   resources:
-     ''''
-    volumeMounts:
-    - mountPath: /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
-      name: cluster-root-ca-bundle
-      subPath: ca-bundle.crt
-    volumes:
-    - configMap:
-        name: cluster-root-ca-bundle
-      name: cluster-root-ca-bundle
+
+                  repo:
+                    volumeMounts:
+                    - mountPath: /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+                      subPath: ca-bundle.crt
+                      name: cluster-root-ca-bundle
+                    volumes:
+                    - name: cluster-root-ca-bundle
+                      configMap:
+                        name: cluster-root-ca-bundle
 ```
 
 
